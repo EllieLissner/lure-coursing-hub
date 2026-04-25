@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>US Lure Coursing Hub</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.css" rel="stylesheet">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.js"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a class="nav-brand" href="#">
+      <div class="nav-brand-mark">LC</div>
+      US Lure Coursing Hub
+    </a>
+    <div class="nav-links">
+      <a href="#map-section">Map</a>
+      <a href="#clubs-section">Clubs</a>
+      <a href="#events-section">Events</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <h1>US Lure Coursing Hub</h1>
+    <p>Every club. Every trial. All in one place.</p>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-number" id="club-count">—</span>
+        <span class="stat-label">Clubs</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number" id="event-count">—</span>
+        <span class="stat-label">2026 Events</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number" id="state-count">—</span>
+        <span class="stat-label">States</span>
+      </div>
+    </div>
+    <div class="global-filters">
+      <select id="org-selector" class="org-selector" aria-label="Filter by organisation">
+        <option value="">All Orgs</option>
+        <option value="ASFA">ASFA</option>
+        <option value="AKC">AKC</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Map -->
+  <section id="map-section">
+    <div class="section-header">
+      <h2>Club Locations</h2>
+      <p>Click any marker to see club details and upcoming events. Colors indicate ASFA region.</p>
+    </div>
+    <div id="mapbox-container"></div>
+    <div id="map-token-notice" class="token-notice">
+      <strong>Mapbox token required.</strong> Open <code>js/config.js</code> and replace <code>YOUR_MAPBOX_ACCESS_TOKEN</code> with your token from
+      <a href="https://account.mapbox.com/" target="_blank" rel="noopener">account.mapbox.com</a>.
+    </div>
+  </section>
+
+  <!-- Clubs -->
+  <section id="clubs-section" class="section">
+    <div class="section-header">
+      <h2>Lure Coursing Clubs</h2>
+      <p>ASFA-affiliated regional clubs, national breed clubs, and independent AKC clubs across the United States.</p>
+    </div>
+
+    <div class="filters">
+      <input type="search" id="club-search" placeholder="Search by name, abbreviation, or city&hellip;" class="search-input" autocomplete="off">
+      <select id="state-filter" class="filter-select">
+        <option value="">All States</option>
+      </select>
+      <select id="region-filter" class="filter-select">
+        <option value="">All ASFA Regions</option>
+        <option value="1">Region 1 &mdash; Pacific Northwest</option>
+        <option value="2">Region 2 &mdash; Northern California</option>
+        <option value="3">Region 3 &mdash; Mountain West</option>
+        <option value="4">Region 4 &mdash; South Central</option>
+        <option value="5">Region 5 &mdash; Upper Midwest</option>
+        <option value="6">Region 6 &mdash; Great Lakes</option>
+        <option value="7">Region 7 &mdash; Southeast</option>
+        <option value="8">Region 8 &mdash; Mid-Atlantic</option>
+        <option value="9">Region 9 &mdash; New England</option>
+        <option value="10">Region 10 &mdash; Southern California</option>
+      </select>
+    </div>
+
+    <div id="clubs-grid" class="clubs-grid"></div>
+  </section>
+
+  <!-- Events -->
+  <section id="events-section" class="section">
+    <div class="section-header">
+      <h2>2026 Events</h2>
+      <p>ASFA trials, AKC lure coursing trials, and AKC Fast CAT events in chronological order.
+        Sources: <a href="https://www.asfa.org/event/" target="_blank" rel="noopener">asfa.org</a> &middot;
+        <a href="https://webapps.akc.org/event-search/#?query=lure+coursing" target="_blank" rel="noopener">AKC Event Search</a>.
+        Past events are dimmed &mdash; cancelled are struck through.</p>
+    </div>
+
+    <div class="filters">
+      <select id="event-state-filter" class="filter-select">
+        <option value="">All States</option>
+      </select>
+      <select id="event-type-filter" class="filter-select">
+        <option value="">All Types</option>
+        <option value="upcoming">Upcoming only</option>
+        <option value="trial">Trials only</option>
+        <option value="specialty">Specialties only</option>
+      </select>
+    </div>
+
+    <div id="events-list" class="events-list"></div>
+  </section>
+
+  <footer class="footer">
+    <p>
+      Club and event data sourced from
+      <a href="https://www.asfa.org" target="_blank" rel="noopener">ASFA</a>,
+      <a href="https://www.akc.org/sports/coursing/lure-coursing/" target="_blank" rel="noopener">AKC</a>,
+      and individual club websites.
+    </p>
+    <p>Events reflect the 2026 ASFA trial schedule. Always verify entry deadlines and details with the hosting club.</p>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

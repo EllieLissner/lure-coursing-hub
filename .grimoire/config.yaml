@@ -1,0 +1,29 @@
+version: 1
+project:
+  commit_style: conventional
+  agents:
+    - claude
+  caveman: lite
+  doc_tool: one
+features_dir: features
+decisions_dir: .grimoire/decisions
+tools: {}
+checks:
+  - lint
+  - format
+  - duplicates
+  - complexity
+  - dead_code
+  - unit_test
+  - bdd_test
+  - security
+  - dep_audit
+  - secrets
+  - best_practices
+llm:
+  thinking:
+    command: claude
+  coding:
+    command: claude
+bug_trackers: []
+testing_tools: []

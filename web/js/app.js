@@ -246,7 +246,7 @@ function initMap() {
         .join('');
 
       const regionLabel = club.region
-        ? `<p class="popup-region">ASFA Region ${club.region} &mdash; ${REGION_NAMES[club.region]}</p>`
+        ? `<p class="popup-region">Region ${club.region} &mdash; ${REGION_NAMES[club.region]}</p>`
         : '';
 
       const websiteLink = club.website

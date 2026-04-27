@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>US Lure Coursing Hub</title>
+  <title>US Lure Sports Hub</title>
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.css" rel="stylesheet">
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.js"></script>
@@ -13,7 +13,7 @@
   <nav class="navbar">
     <a class="nav-brand" href="#">
       <div class="nav-brand-mark">LC</div>
-      US Lure Coursing Hub
+      US Lure Sports Hub
     </a>
     <div class="nav-links">
       <a href="#map-section">Map</a>
@@ -23,8 +23,8 @@
   </nav>
 
   <div class="hero">
-    <h1>US Lure Coursing Hub</h1>
-    <p>Every club. Every trial. All in one place.</p>
+    <h1>US Lure Sports Hub</h1>
+    <p>Every club. Every meet. All in one place.</p>
     <div class="hero-stats">
       <div class="stat">
         <span class="stat-number" id="club-count">—</span>
@@ -44,6 +44,7 @@
         <option value="">All Orgs</option>
         <option value="ASFA">ASFA</option>
         <option value="AKC">AKC</option>
+        <option value="LGRA">LGRA</option>
       </select>
     </div>
   </div>
@@ -52,7 +53,7 @@
   <section id="map-section">
     <div class="section-header">
       <h2>Club Locations</h2>
-      <p>Click any marker to see club details and upcoming events. Colors indicate ASFA region.</p>
+      <p>Click any marker to see club details and upcoming events. Colors indicate AKC region.</p>
     </div>
     <div id="mapbox-container"></div>
     <div id="map-token-notice" class="token-notice">
@@ -64,8 +65,8 @@
   <!-- Clubs -->
   <section id="clubs-section" class="section">
     <div class="section-header">
-      <h2>Lure Coursing Clubs</h2>
-      <p>ASFA-affiliated regional clubs, national breed clubs, and independent AKC clubs across the United States.</p>
+      <h2>Lure Sports Clubs</h2>
+      <p>ASFA, AKC, and LGRA clubs across the United States.</p>
     </div>
 
     <div class="filters">
@@ -74,17 +75,13 @@
         <option value="">All States</option>
       </select>
       <select id="region-filter" class="filter-select">
-        <option value="">All ASFA Regions</option>
-        <option value="1">Region 1 &mdash; Pacific Northwest</option>
-        <option value="2">Region 2 &mdash; Northern California</option>
-        <option value="3">Region 3 &mdash; Mountain West</option>
+        <option value="">All Regions</option>
+        <option value="1">Region 1 &mdash; Northeast</option>
+        <option value="2">Region 2 &mdash; Southeast</option>
+        <option value="3">Region 3 &mdash; North Central</option>
         <option value="4">Region 4 &mdash; South Central</option>
-        <option value="5">Region 5 &mdash; Upper Midwest</option>
-        <option value="6">Region 6 &mdash; Great Lakes</option>
-        <option value="7">Region 7 &mdash; Southeast</option>
-        <option value="8">Region 8 &mdash; Mid-Atlantic</option>
-        <option value="9">Region 9 &mdash; New England</option>
-        <option value="10">Region 10 &mdash; Southern California</option>
+        <option value="5">Region 5 &mdash; Northwest</option>
+        <option value="6">Region 6 &mdash; Southwest</option>
       </select>
     </div>
 
@@ -95,9 +92,10 @@
   <section id="events-section" class="section">
     <div class="section-header">
       <h2>2026 Events</h2>
-      <p>ASFA trials, AKC lure coursing trials, and AKC Fast CAT events in chronological order.
+      <p>ASFA trials, AKC lure coursing trials, AKC Fast CAT events, and LGRA meets in chronological order.
         Sources: <a href="https://www.asfa.org/event/" target="_blank" rel="noopener">asfa.org</a> &middot;
-        <a href="https://webapps.akc.org/event-search/#?query=lure+coursing" target="_blank" rel="noopener">AKC Event Search</a>.
+        <a href="https://webapps.akc.org/event-search/#?query=lure+coursing" target="_blank" rel="noopener">AKC Event Search</a> &middot;
+        <a href="https://lgra.club" target="_blank" rel="noopener">lgra.club</a>.
         Past events are dimmed &mdash; cancelled are struck through.</p>
     </div>
 
@@ -121,9 +119,10 @@
       Club and event data sourced from
       <a href="https://www.asfa.org" target="_blank" rel="noopener">ASFA</a>,
       <a href="https://www.akc.org/sports/coursing/lure-coursing/" target="_blank" rel="noopener">AKC</a>,
+      <a href="https://lgra.club" target="_blank" rel="noopener">LGRA</a>,
       and individual club websites.
     </p>
-    <p>Events reflect the 2026 ASFA trial schedule. Always verify entry deadlines and details with the hosting club.</p>
+    <p>Events reflect the 2026 ASFA, AKC, and LGRA schedules. Always verify entry deadlines and details with the hosting club.</p>
   </footer>
 
   <script src="js/config.js"></script>
